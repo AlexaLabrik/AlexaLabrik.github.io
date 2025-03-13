@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /users
-Disallow: /admin
-Allow: *.css
-Allow: *.js
-Allow: /images
-Host: www.playsroom.by
