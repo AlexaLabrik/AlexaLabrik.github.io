@@ -6,6 +6,22 @@
     <title>Компьютерные игры</title>
     <description>новые компьютерные игры, описание новых компьютерных игр</description>
     <link rel="stylesheet" href="/css/main.css">
+    <style>
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .social-button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .facebook { background-color: #3b5998; color: white; }
+        .twitter { background-color: #1da1f2; color: white; }
+        .vk { background-color: #4a76a8; color: white; }
+    </style>
 </head>
 <body>
     <menu>
@@ -37,5 +53,31 @@
             </div>
         </div>
     </div>
+    <footer>
+        <div class="social-buttons">
+            <div class="social-button facebook" onclick="shareOnFacebook()">Поделиться на Facebook</div>
+            <div class="social-button twitter" onclick="shareOnTwitter()">Поделиться в Twitter</div>
+            <div class="social-button vk" onclick="shareOnVK()">Поделиться в ВКонтакте</div>
+        </div>
+        <script>
+            function shareOnFacebook() {
+                const url = encodeURIComponent(window.location.href);
+                const facebookShareUrl = \https://www.facebook.com/sharer/sharer.php?u=${url}\;
+                window.open(facebookShareUrl, '_blank');
+            }
+            function shareOnTwitter() {
+                const url = encodeURIComponent(window.location.href);
+                const text = encodeURIComponent(document.title);
+                const twitterShareUrl = \https://twitter.com/intent/tweet?url=${url}&text=${text}\;
+                window.open(twitterShareUrl, '_blank');
+            }
+            function shareOnVK() {
+                const url = encodeURIComponent(window.location.href);
+                const text = encodeURIComponent(document.title);
+                const vkShareUrl = \https://vk.com/share.php?url=${url}&title=${text}\;
+                window.open(vkShareUrl, '_blank');
+            }
+        </script>
+    </footer>
 </body>
 </html>
