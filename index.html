@@ -82,5 +82,29 @@
         <p>На Playrooms.by вы всегда найдете что-то новое и интересное для себя и своих друзей. 
         Следите за обновлениями и будьте в курсе всех новинок игровой индустрии!</p>
     </div>
+    <div class="social-buttons">
+        <div class="social-button facebook" onclick="shareOnFacebook()">Поделиться на Facebook</div>
+        <div class="social-button twitter" onclick="shareOnTwitter()">Поделиться в Twitter</div>
+        <div class="social-button vk" onclick="shareOnVK()">Поделиться в ВКонтакте</div>
+    </div>
+    <script>
+        function shareOnFacebook() {
+             const url = encodeURIComponent(window.location.href);
+             const facebookShareUrl = \https://www.facebook.com/sharer/sharer.php?u=${url}\;
+             window.open(facebookShareUrl, '_blank');
+         }
+         function shareOnTwitter() {
+             const url = encodeURIComponent(window.location.href);
+             const text = encodeURIComponent(document.title);
+             const twitterShareUrl = \https://twitter.com/intent/tweet?url=${url}&text=${text}\;
+             window.open(twitterShareUrl, '_blank');
+         }
+         function shareOnVK() {
+             const url = encodeURIComponent(window.location.href);
+             const text = encodeURIComponent(document.title);
+             const vkShareUrl = \https://vk.com/share.php?url=${url}&title=${text}\;
+             window.open(vkShareUrl, '_blank');
+         }
+    </script>
 </body>
 </html>
