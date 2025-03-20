@@ -2,4 +2,4 @@ User-agent: *
 Allow: *.css
 Allow: *.js
 Allow: /images
-Host: www.playsroom.by
+Host: https://alexalabrik.github.io
